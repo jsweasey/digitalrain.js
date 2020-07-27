@@ -6,13 +6,12 @@ var canvas = document.getElementById("canvas"),
     charsLineAt = [],
     charChance = 0;
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-textColumns = Math.floor((canvas.width)/fontSize);
-
 document.getElementById('test').innerHTML = textColumns; //(BUG) An artifact of testing, yet when removed it causes the rain to fall less smoothly?
 
 function initializeArrays(){
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  textColumns = Math.floor((canvas.width)/fontSize);
   for (var i = 0; i < textColumns; i++){
     charsLineAt[i] = 1;
     charsRaining[i] = false;
